@@ -44,9 +44,17 @@ module.exports = function (grunt) {
         },
         
         watch: {
-            scripts: {
-                files: ["./app/**"],
-                tasks: ["build"]
+            app: {
+                scripts: {
+                    files: ["./app/**"],
+                    tasks: ["build"]
+                }
+            },
+            js: {
+                scripts: {
+                    files: ["./app/source/js/**"],
+                    tasks: ["browserify"]
+                }
             }
         }
     });
@@ -56,6 +64,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-htmlmin");
     
-    grunt.registerTask('start', ['build', 'watch']);
+    grunt.registerTask('start', ['build', 'watch:js']);
     grunt.registerTask("build", ["browserify", "sass", "htmlmin"]);
 };

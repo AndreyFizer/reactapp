@@ -10,10 +10,24 @@ export default class LoginView extends React.Component {
     
     render(){
         return (
-            <div>
-                <form>
-                    <input type="text"/>
-                    <input type="button" className="waves-effect waves-light btn" value="BATOn" onClick={this.onBtnClick}/>
+            <div className="row">
+                <form className="col s4">
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <label htmlFor="loginEmail">Email</label>
+                            <input id="loginEmail" type="email" className="validate" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <label htmlFor="loginPass">Password</label>
+                            <input id="loginPass" type="password" className="validate" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <input type="button" className="waves-effect waves-light btn" value="registration"/>
+                        <input type="button" className="waves-effect waves-light btn" value="login" onClick={this.onBtnClick}/>
+                    </div>
                 </form>
             </div>
         );
