@@ -16,7 +16,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files  : {
-                    'public/app/bundle.js': ['public/source/js/main.js']
+                    'public/app/bundle.js': ['public/source/js/index.js']
                 }
             }
         },
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     collapseWhitespace: true
                 },
                 files  : {
-                    'public/index.html': 'public/source/index.html'
+                    'public/index.html': 'public/source/sourceIndex.html'
                 }
             }
         },
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files  : {
-                    'public/app/main.css': 'public/source/scss/main.scss'
+                    'public/app/main.css': 'public/source/scss/materialize.scss'
                 }
             }
         },
