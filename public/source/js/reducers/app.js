@@ -1,5 +1,6 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 import {ApplicationStates, APP_LOGIN} from 'actions/app'
+import {routerReducer} from 'react-router-redux'
 
 function stateHandler(state = ApplicationStates.NOT_AUTHORISED, action) {
     switch (action.type) {
@@ -13,7 +14,8 @@ function stateHandler(state = ApplicationStates.NOT_AUTHORISED, action) {
 }
 
 const reactAPP = combineReducers({
-    applicationState : stateHandler
+    applicationState: stateHandler,
+    routing         : routerReducer
 });
 
 export default reactAPP;
