@@ -1,17 +1,12 @@
 var app = require('./app');
-var http = require('http');
-var port = process.env.PORT || '3000';
+var port = '3000';
 
 app.set('port', port);
 
-var server = http.createServer(app);
-
-server.listen(port);
-
-server.on('error', function(err){
-    console.log('Error with code ' + err.code);
+app.listen(port, function () {
+    console.log('Server successfully started on port: ' + app.get('port'));
 });
 
-server.on('listening', function(addr){
-    console.log('Server successfully started on port: ' + app.get('port'));
+app.on('error', function(err){
+    console.log('Error with code ' + err.code);
 });

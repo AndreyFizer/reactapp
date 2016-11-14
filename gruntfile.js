@@ -6,7 +6,8 @@ module.exports = function (grunt) {
                     paths: [
                         './public/source/js',
                         './public/source'
-                    ]
+                    ],
+                    debug: true
                 }
             },
             dist   : {
@@ -16,7 +17,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files  : {
-                    'public/app/bundle.js': ['public/source/js/index.js']
+                    'public/build/bundle.js': ['public/source/js/index.js']
                 }
             }
         },
@@ -38,25 +39,11 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files  : {
-                    'public/app/main.css': 'public/source/scss/materialize.scss'
-                }
-            }
-        },
-        
-        watch: {
-            app: {
-                scripts: {
-                    files: ["./app/**"],
-                    tasks: ["build"]
-                }
-            },
-            js: {
-                scripts: {
-                    files: ["./app/source/js/**"],
-                    tasks: ["browserify"]
+                    'public/build/main.css': 'public/source/scss/materialize.scss'
                 }
             }
         }
+        
     });
     
     grunt.loadNpmTasks('grunt-browserify');

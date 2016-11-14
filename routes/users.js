@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 var usersFakeArray = [
     {
         _id      : 1,
@@ -19,15 +18,20 @@ var usersFakeArray = [
     }
 
 ];
+// var Handler = require('../handlers/user.js');
 
-router.get('/', function (req, res, next) {
-    res.send(usersFakeArray);
-});
-
-router.get('/:id', function (req, res, next) {
-    var id = req.params.id;
-    var result = usersFakeArray[id-1] || {};
-    res.send(result);
-});
-
-module.exports = router;
+module.exports = function () {
+    // var handler = new Handler();
+    
+    router.get('/', function (req, res, next) {
+        res.send(usersFakeArray);
+    });
+    
+    router.get('/:id', function (req, res, next) {
+        var id = req.params.id;
+        var result = usersFakeArray[id - 1] || {};
+        res.send(result);
+    });
+    
+    return router;
+};
